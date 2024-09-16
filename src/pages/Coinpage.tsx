@@ -1,9 +1,11 @@
-
+import Chart from "../components/Chart";
+import CoinInfo from "../components/CoinInfo";
 
 function Coinpage() {
   return (
-    <div className="flex h-[100%] w-[100%] flex-col items-center justify-center">
-      
+    <div className="flex w-[100%] flex-col justify-center lg:flex-row">
+      <CoinInfo />
+      <Chart />
     </div>
   );
 }
