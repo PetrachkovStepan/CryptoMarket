@@ -2,8 +2,12 @@ import { useNavigate } from "react-router";
 
 import Button from "../../Button";
 import btc from "../../../assets/btc.png";
+import { useState } from "react";
+import Modal from "../../Modal";
+import AddModal from "../../AddModal";
 
 function TableItem() {
+  const [modalActive, setModalActive] = useState(false);
   const navigate = useNavigate();
   const navigateToCoinpage = () => {
     navigate("coin");
@@ -11,6 +15,7 @@ function TableItem() {
 
   const add = (e: { stopPropagation: () => void }) => {
     e.stopPropagation();
+    setModalActive(true);
     console.log("a");
   };
   return (
@@ -26,6 +31,14 @@ function TableItem() {
       <Button variant={"primary"} size={"sm"} onClick={add}>
         Add
       </Button>
+      <Modal
+        active={modalActive}
+        setActive={setModalActive}
+        variant={"add"}
+        size={"neutral"}
+      >
+        <AddModal />
+      </Modal>
     </div>
   );
 }
