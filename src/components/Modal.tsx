@@ -19,6 +19,10 @@ export default function Modal({
   setActive,
   ...props
 }: ModalProps) {
+  const closeModal = (e: { stopPropagation: () => void }) => {
+    e.stopPropagation();
+    setActive(false);
+  };
   return (
     <div
       className={
@@ -26,7 +30,7 @@ export default function Modal({
           ? "fixed left-0 top-0 flex h-[100vh] w-[100vw] flex-col items-center justify-center bg-black bg-opacity-[40%]"
           : "hidden"
       }
-      onClick={() => setActive(false)}
+      onClick={(e) => closeModal(e)}
     >
       <main
         className={cn(modalVariants({ variant, size, className }))}

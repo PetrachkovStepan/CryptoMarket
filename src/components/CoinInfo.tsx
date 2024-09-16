@@ -4,7 +4,7 @@ import Button from "./Button";
 
 function CoinInfo() {
   return (
-    <div className="m-10 flex w-[80%] flex-col items-start justify-around rounded-[5px] border-[2px] border-dark-theme-ligth-blue p-5 lg:w-[25%]">
+    <div className="m-14 flex w-[80%] flex-col items-start justify-around rounded-[5px] border-[2px] border-dark-theme-ligth-blue p-5 lg:w-[25%]">
       <div className="flex w-[70%] max-w-[190px] flex-row items-center justify-between">
         <img src={btc} className="h-[40px] w-[40px]" />
         <h1 className="m-1 text-[28px] font-medium text-white">{"Bitcoin"}</h1>

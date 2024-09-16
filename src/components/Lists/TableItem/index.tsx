@@ -20,7 +20,7 @@ function TableItem() {
   };
   return (
     <div
-      className="flex h-[60px] w-[100%] flex-row items-center justify-between border-t-[1px] border-dark-theme-ligth-blue px-[10%] hover:bg-dark-theme-middle-blue"
+      className="flex h-[60px] w-[100%] flex-row items-center justify-between border-t-[1px] border-dark-theme-ligth-blue px-[3%] hover:bg-dark-theme-middle-blue lg:px-[10%]"
       onClick={navigateToCoinpage}
     >
       <div className="text-[14px] text-white">{"BTC"}</div>
