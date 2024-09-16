@@ -28,7 +28,7 @@ const inputVariants = cva(
       variant: {
         primary:
           "border-dark-theme-ligth-blue bg-dark-theme-middle-blue p-3 text-white hover:bg-dark-theme-ligth-blue",
-        secondary: "",
+        secondary: "w-[40%] border-dark-theme-ligth-blue bg-dark-theme-middle-blue p-3 text-white hover:bg-dark-theme-ligth-blue",
       },
     },
     defaultVariants: {

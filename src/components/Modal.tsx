@@ -45,7 +45,7 @@ const modalVariants = cva(
     variants: {
       variant: {
         briefcase: "min-w-[300px] w-[50%] ",
-        add: "max-h-[100px] max-w-[200px]",
+        add: "max-h-[200px] max-w-[350px]",
       },
       size: {
         neutral: "",

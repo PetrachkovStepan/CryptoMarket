@@ -3,6 +3,7 @@ import Button from "./Button";
 import PopularList from "./Lists/PopularList";
 import Modal from "./Modal";
 import Serachbar from "./Serachbar";
+import BriefcaseContent from "./Briefcase";
 
 function Header() {
   const [modalActive, setModalActive] = useState(false);
@@ -24,8 +25,13 @@ function Header() {
           </pre>
         </Button>
       </div>
-      <Modal active={modalActive} setActive={setModalActive}  variant={"briefcase"} size={"neutral"}>
-        <div>aaaaaaaaaaa</div>
+      <Modal
+        active={modalActive}
+        setActive={setModalActive}
+        variant={"briefcase"}
+        size={"neutral"}
+      >
+        <BriefcaseContent />
       </Modal>
     </header>
   );
