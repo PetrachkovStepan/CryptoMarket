@@ -34,7 +34,7 @@ const buttonVariants = cva(
           "rounded-[5px] border-[2px] border-dark-theme-ligth-blue text-dark-theme-text hover:bg-dark-theme-ligth-blue",
         secondary:
           "rounded-[5px] border-[2px] border-dark-theme-ligth-blue text-dark-theme-text hover:bg-dark-theme-middle-blue",
-        blueButton: "rounded-[5px] border-[2px] border-none bg-blue text-white hover:bg-ligth-blue",
+        blueButton: "rounded-[5px] border-[2px] border-none bg-main-blue text-white hover:bg-ligth-blue",
         searchButton: "absolute m-2 opacity-[50%]"
       },
       size: {
