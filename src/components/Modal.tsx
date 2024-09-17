@@ -27,7 +27,7 @@ export default function Modal({
     <div
       className={
         active
-          ? "fixed left-0 top-0 flex h-[100vh] w-[100vw] flex-col items-center justify-center bg-black bg-opacity-[40%]"
+          ? "fixed left-0 top-0 flex h-[100vh] w-[100vw] flex-col items-center justify-center bg-black bg-opacity-[40%] z-50"
           : "hidden"
       }
       onClick={(e) => closeModal(e)}

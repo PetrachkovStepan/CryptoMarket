@@ -14,7 +14,7 @@ function AddModal() {
         <div className="text-[14px] text-green-text">{"2.18"} %</div>
       </div>
 
-      <div className="my-5 flex w-[100%] flex-row justify-start gap-3">
+      <div className="my-5 flex w-[100%] flex-row items-center justify-start gap-3">
         <Input
           variant={"secondary"}
           placeholder="count"

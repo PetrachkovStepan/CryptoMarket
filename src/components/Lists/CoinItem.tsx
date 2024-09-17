@@ -27,7 +27,7 @@ function CoinItem() {
         <div className="text-[14px] text-green-text">{"2.18"} %</div>
       </div>
 
-      <div className="m-2 flex w-[100%] flex-row justify-start gap-3 lg:m-0 lg:justify-end">
+      <div className="m-2 flex w-[100%] flex-row items-center justify-start gap-3 lg:m-0 lg:justify-end">
         <Input
           variant={"secondary"}
           placeholder="count"

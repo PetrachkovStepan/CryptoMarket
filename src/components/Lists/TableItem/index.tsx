@@ -16,8 +16,8 @@ function TableItem() {
   const add = (e: { stopPropagation: () => void }) => {
     e.stopPropagation();
     setModalActive(true);
-    console.log("a");
   };
+
   return (
     <div
       className="flex h-[60px] w-[100%] flex-row items-center justify-between border-t-[1px] border-dark-theme-ligth-blue px-[3%] hover:bg-dark-theme-middle-blue lg:px-[10%]"
