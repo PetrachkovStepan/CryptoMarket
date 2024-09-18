@@ -12,7 +12,7 @@ function TableItem(props: { item: coinInterface }) {
   const [modalActive, setModalActive] = useState(false);
   const navigate = useNavigate();
   const navigateToCoinpage = () => {
-    navigate(props.item.id);
+    navigate("coin/" + props.item.id);
   };
 
   const add = (e: { stopPropagation: () => void }) => {
