@@ -1,5 +1,5 @@
-import Button from "./Button";
-import Input from "./Input";
+import Button from "./Interactive/Button";
+import Input from "./Interactive/Input";
 
 function AddModal() {
   const addCoin = (e: { stopPropagation: () => void }) => {

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 
-import Input from "../Input";
-import Button from "../Button";
+import Input from "../../Interactive/Input";
+import Button from "../../Interactive/Button";
 
 function CoinItem() {
   const navigate = useNavigate();
