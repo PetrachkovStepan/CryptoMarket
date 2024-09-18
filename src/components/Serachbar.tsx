@@ -1,6 +1,6 @@
 import SearchImg from "../assets/SearchImg";
-import Button from "./Button";
-import Input from "./Input";
+import Button from "./Interactive/Button";
+import Input from "./Interactive/Input";
 
 function Serachbar() {
   return (

@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router";
 
 import Chart from "../components/Chart";
-import Button from "../components/Button";
+import Button from "../components/Interactive/Button";
 import CoinInfo from "../components/CoinInfo";
 
 function Coinpage() {
   const navigate = useNavigate();
-
 
   const navigateToHomepage = () => {
     navigate("/");

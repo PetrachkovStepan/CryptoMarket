@@ -1,6 +1,6 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { Dispatch, HTMLAttributes, ReactNode, SetStateAction } from "react";
-import cn from "../utils/cn";
+import cn from "../../utils/cn";
 
 interface ModalProps
   extends HTMLAttributes<HTMLDivElement>,

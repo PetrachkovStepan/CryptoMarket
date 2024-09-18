@@ -1,4 +1,4 @@
-import CoinList from "./Lists/CoinList";
+import CoinList from "./Lists/CoinList/CoinList";
 
 function BriefcaseContent() {
   return (
