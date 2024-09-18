@@ -11,3 +11,6 @@ export interface coinInterface {
   changePercent24Hr: number;
   vwap24Hr: number;
 }
+export interface coinListInterface {
+  data: coinInterface[];
+}

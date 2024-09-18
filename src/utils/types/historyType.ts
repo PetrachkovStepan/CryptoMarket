@@ -3,6 +3,9 @@ export interface coinHistoryInterface {
   priceUsd: number;
   time: number;
 }
+export interface coinHistoryListInterface {
+  data: coinHistoryInterface[]
+}
 export interface coinHistoryDateInterface {
   date: string;
 }

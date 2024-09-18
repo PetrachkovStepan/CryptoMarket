@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { useParams } from "react-router";
 
@@ -6,36 +6,12 @@ import Modal from "./Interactive/Modal";
 import Button from "./Interactive/Button";
 import AddModal from "./AddModal";
 import CoinInfoTag from "./CoinInfoTag";
-import { getOneCoin } from "../api/coinAPI";
-import { coinInterface } from "../utils/types/coinType";
+import { cryptoAPI } from "../api/coinAPI";
 
 function CoinInfo() {
   const coinId = useParams();
   const [modalActive, setModalActive] = useState(false);
-  const [coinInfo, setCoinInfo] = useState<coinInterface>({
-    id: "",
-    rank: "",
-    symbol: "",
-    name: "",
-    supply: 0,
-    maxSupply: 0,
-    marketCapUsd: 0,
-    volumeUsd24Hr: 0,
-    priceUsd: 0,
-    changePercent24Hr: 0,
-    vwap24Hr: 0,
-  });
-
-  useEffect(() => {
-    getCoinInfo();
-  }, [coinId]);
-
-  const getCoinInfo = async () => {
-    if (coinId.id != undefined) {
-      const resp = await getOneCoin(coinId.id);
-      setCoinInfo(resp.data);
-    }
-  };
+  const { data: coin } = cryptoAPI.useFetchSingleCoinQuery(coinId.id);
 
   const add = (e: { stopPropagation: () => void }) => {
     e.stopPropagation();
@@ -48,33 +24,33 @@ function CoinInfo() {
         <img
           src={
             "https://assets.coincap.io/assets/icons/" +
-            coinInfo.symbol.toLowerCase() +
+            coin?.data.symbol.toLowerCase() +
             "@2x.png"
           }
           className="h-[40px] w-[40px]"
         />
         <h1 className="m-1 text-[28px] font-medium text-white">
-          {coinInfo.name}
+          {coin?.data.name}
         </h1>
         <h2 className="m-1 text-[20px] text-dark-theme-text">
-          {coinInfo.symbol}
+          {coin?.data.symbol}
         </h2>
       </div>
       <div className="m-1 text-[32px] font-bold text-white">
-        ${Number(coinInfo.priceUsd).toFixed(2)}
+        ${Number(coin?.data.priceUsd).toFixed(2)}
       </div>
-      <CoinInfoTag propName={"Rank"} propValue={coinInfo.rank}></CoinInfoTag>
+      <CoinInfoTag propName={"Rank"} propValue={coin?.data.rank}></CoinInfoTag>
       <CoinInfoTag
         propName={"Supply"}
-        propValue={Number(coinInfo.supply).toFixed(2)}
+        propValue={Number(coin?.data.supply).toFixed(2)}
       ></CoinInfoTag>
       <CoinInfoTag
         propName={"Max. Supply"}
-        propValue={Number(coinInfo.maxSupply).toFixed(2)}
+        propValue={Number(coin?.data.maxSupply).toFixed(2)}
       ></CoinInfoTag>
       <CoinInfoTag
         propName={"Market cap"}
-        propValue={Number(coinInfo.marketCapUsd).toFixed(2)}
+        propValue={Number(coin?.data.marketCapUsd).toFixed(2)}
       ></CoinInfoTag>
       <div className="mt-4 flex w-[100%] items-center justify-center">
         <Button variant={"blueButton"} size={"md"} onClick={add}>

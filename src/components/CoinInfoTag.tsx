@@ -1,6 +1,6 @@
 interface InfoTagProps {
   propName: string;
-  propValue: string | number;
+  propValue: string | number | undefined;
 }
 
 function CoinInfoTag({ propName, propValue }: InfoTagProps) {
