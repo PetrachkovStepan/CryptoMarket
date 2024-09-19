@@ -1,6 +1,9 @@
 import CoinList from "./Lists/CoinList/CoinList";
+import { useAppSelector } from "../hooks/redux";
 
 function BriefcaseContent() {
+  const briefcase = useAppSelector((state) => state.briefcase);
+
   return (
     <div className="m-2 flex h-[100%] flex-col justify-between lg:m-10">
       <div className="flex flex-col items-center lg:flex-row">
@@ -12,7 +15,7 @@ function BriefcaseContent() {
           {"+2,38"} {"(1,80 %)"}
         </pre>
       </div>
-      <CoinList />
+      <CoinList items={briefcase.items} />
     </div>
   );
 }

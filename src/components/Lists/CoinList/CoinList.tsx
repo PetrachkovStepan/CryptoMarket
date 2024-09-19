@@ -1,13 +1,12 @@
+import { coinBriefcaseInterface } from "../../../utils/types/coinType";
 import CoinItem from "./CoinItem";
 
-function CoinList() {
+function CoinList({ items }: { items: coinBriefcaseInterface[] }) {
   return (
     <div className="mt-5 justify-center">
-      <CoinItem />
-      <CoinItem />
-      <CoinItem />
-      <CoinItem />
-      <CoinItem />
+        {items.map((item) => (
+          <CoinItem key={item.id} item={item} />
+        ))}
     </div>
   );
 }
