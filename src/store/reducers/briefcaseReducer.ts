@@ -4,9 +4,6 @@ import {
   briefcaseState,
 } from "../../utils/types/redusersTypes/briefcareTypes";
 
-export const ADD_ITEM = "ADD_ITEM";
-export const DELETE_ITEM = "DELETE_ITEM";
-
 const initialState: briefcaseState = {
   items: [],
 };
@@ -26,7 +23,9 @@ export const briefcaseSlice = createSlice({
     },
     deleteBriefcaseItem(state: briefcaseState, action: briefcaseAction) {
       state.items = state.items.filter((n) => n.id !== action.payload[0].id);
-      state.items.push(action.payload[0]);
+      if (action.payload[0].count > 0) {
+        state.items.push(action.payload[0]);
+      }
     },
   },
 });

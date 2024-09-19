@@ -12,10 +12,12 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import currentBriefcaseReducer from "./reducers/currentBriefcaseReducer";
 
 const rootReducer = combineReducers({
   [cryptoAPI.reducerPath]: cryptoAPI.reducer,
   briefcase: briefcaseReducer,
+  currentBriefcase: currentBriefcaseReducer,
 });
 const persistConfig = {
   key: "root",

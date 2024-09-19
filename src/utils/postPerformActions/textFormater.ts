@@ -6,16 +6,22 @@ const THOUSAND = 1000;
 
 export const formatValue = (item: number) => {
   let text = "";
+  if (item < 0) {
+    item *= -1;
+  }
   if (item / BILLION > 1) {
-    text += (Number(item.toFixed(2)) / BILLION).toString() + " b";
+    text +=
+      (Number(item) / BILLION).toFixed(TABLE_VALUE_RANGE).toString() + "b";
     return text;
   }
   if (item / MILLION > 1) {
-    text += (Number(item.toFixed(2)) / MILLION).toString() + " m";
+    text +=
+      (Number(item) / MILLION).toFixed(TABLE_VALUE_RANGE).toString() + "m";
     return text;
   }
   if (item / THOUSAND > 1) {
-    text += (Number(item.toFixed(2)) / THOUSAND).toString() + " k";
+    text +=
+      (Number(item) / THOUSAND).toFixed(TABLE_VALUE_RANGE).toString() + "k";
     return text;
   }
   return item.toFixed(TABLE_VALUE_RANGE).toString();

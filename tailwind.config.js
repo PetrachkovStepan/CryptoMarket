@@ -14,7 +14,7 @@ export default {
       "main-blue": "#3F61C8",
       "green-text": "#11C784",
       "ligth-blue": "#6188FF",
-      "red-text": "#0D1421",
+      "red-text": "#D37279",
       "dark-theme-main-blue": "#0D1421",
       "dark-theme-middle-blue": "#222531",
       "dark-theme-ligth-blue": "#323546",

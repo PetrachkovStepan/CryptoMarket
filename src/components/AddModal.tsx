@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { TABLE_VALUE_RANGE } from "../constants/intervalsAPI";
 import { useAppDispatch } from "../hooks/redux";
 import { briefcaseSlice } from "../store/reducers/briefcaseReducer";
 import { coinBriefcaseInterface, coinInterface } from "../utils/types/coinType";
 import Button from "./Interactive/Button";
 import Input from "./Interactive/Input";
+import { formatValue } from "../utils/postPerformActions/textFormater";
+import Text from "./Text";
 
 function AddModal(props: { item: coinInterface }) {
   const dispatch = useAppDispatch();
@@ -21,21 +22,24 @@ function AddModal(props: { item: coinInterface }) {
         changePercent24Hr: props.item.changePercent24Hr,
       };
       dispatch(briefcaseSlice.actions.addBriefcaseItem([addItem]));
-      console.log("Coin added");
     }
   };
   return (
     <div className="m-10 flex h-[100%] flex-col">
       <div className="flex w-[100%] flex-row justify-between">
-        <div className="flex flex-row text-[14px] text-white">
+        <Text variant={"normal"} size={"normal"}>
           {props.item.symbol}
-        </div>
-        <div className="text-[14px] text-white">
-          $ {Number(props.item.priceUsd).toFixed(TABLE_VALUE_RANGE)}
-        </div>
-        <div className="text-[14px] text-green-text">
-          {Number(props.item.changePercent24Hr).toFixed(TABLE_VALUE_RANGE)} %
-        </div>
+        </Text>
+        <Text variant={"normal"} size={"normal"}>
+          $ {formatValue(Number(props.item.priceUsd))}
+        </Text>
+        <Text
+          variant={props.item.changePercent24Hr > 0 ? "priceUp" : "priceDown"}
+          size={"normal"}
+        >
+          {props.item.changePercent24Hr > 0 ? "+" : "-"}
+          {formatValue(Number(props.item.changePercent24Hr))} %
+        </Text>
       </div>
 
       <div className="my-5 flex w-[100%] flex-row items-center justify-start gap-3">
@@ -43,7 +47,7 @@ function AddModal(props: { item: coinInterface }) {
           variant={"secondary"}
           placeholder="count"
           type="number"
-          onChange={(e)=>setCount(Number(e.target.value))}
+          onChange={(e) => setCount(Number(e.target.value))}
           onClick={(e) => e.stopPropagation()}
         />
         <Button variant={"blueButton"} size={"sm"} onClick={addCoin}>

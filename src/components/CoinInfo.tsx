@@ -8,6 +8,7 @@ import AddModal from "./AddModal";
 import CoinInfoTag from "./CoinInfoTag";
 import { cryptoAPI } from "../api/coinAPI";
 import LoaderError from "./LoaderError";
+import { formatValue } from "../utils/postPerformActions/textFormater";
 
 function CoinInfo() {
   const coinId = useParams();
@@ -46,7 +47,7 @@ function CoinInfo() {
             </h2>
           </div>
           <div className="m-1 text-[32px] font-bold text-white">
-            ${Number(coin?.data.priceUsd).toFixed(2)}
+            ${formatValue(Number(coin?.data.priceUsd))}
           </div>
           <CoinInfoTag
             propName={"Rank"}
@@ -54,15 +55,15 @@ function CoinInfo() {
           ></CoinInfoTag>
           <CoinInfoTag
             propName={"Supply"}
-            propValue={Number(coin?.data.supply).toFixed(2)}
+            propValue={formatValue(Number(coin?.data.supply))}
           ></CoinInfoTag>
           <CoinInfoTag
             propName={"Max. Supply"}
-            propValue={Number(coin?.data.maxSupply).toFixed(2)}
+            propValue={formatValue(Number(coin?.data.maxSupply))}
           ></CoinInfoTag>
           <CoinInfoTag
             propName={"Market cap"}
-            propValue={Number(coin?.data.marketCapUsd).toFixed(2)}
+            propValue={formatValue(Number(coin?.data.marketCapUsd))}
           ></CoinInfoTag>
           <div className="mt-4 flex w-[100%] items-center justify-center">
             <Button variant={"blueButton"} size={"md"} onClick={add}>

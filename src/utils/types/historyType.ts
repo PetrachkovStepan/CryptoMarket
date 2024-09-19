@@ -4,7 +4,7 @@ export interface coinHistoryInterface {
   time: number;
 }
 export interface coinHistoryListInterface {
-  data: coinHistoryInterface[]
+  data: coinHistoryInterface[];
 }
 export interface coinHistoryDateInterface {
   date: string;

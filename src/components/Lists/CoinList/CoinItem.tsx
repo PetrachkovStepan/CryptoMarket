@@ -1,11 +1,16 @@
+import { useEffect, useState } from "react";
+
 import { useNavigate } from "react-router";
 
 import Input from "../../Interactive/Input";
 import Button from "../../Interactive/Button";
-import { coinBriefcaseInterface } from "../../../utils/types/coinType";
+import { cryptoAPI } from "../../../api/coinAPI";
 import { useAppDispatch } from "../../../hooks/redux";
+import { coinBriefcaseInterface } from "../../../utils/types/coinType";
 import { briefcaseSlice } from "../../../store/reducers/briefcaseReducer";
-import { useState } from "react";
+import { currentBriefcaseSlice } from "../../../store/reducers/currentBriefcaseReducer";
+import Text from "../../Text";
+import { formatValue } from "../../../utils/postPerformActions/textFormater";
 
 function CoinItem(props: { item: coinBriefcaseInterface }) {
   const navigate = useNavigate();
@@ -14,10 +19,29 @@ function CoinItem(props: { item: coinBriefcaseInterface }) {
   const navigateToCoinpage = () => {
     navigate("coin/" + props.item.id.toString());
   };
+  const { data: coin } = cryptoAPI.useFetchSingleCoinQuery(props.item.id);
+
+  useEffect(() => {
+    if (coin != undefined) {
+      const addItem = {
+        priceUsd: coin.data.priceUsd,
+        id: props.item.id,
+      };
+      dispatch(currentBriefcaseSlice.actions.addBriefcaseCurrent(addItem));
+    }
+  });
 
   const deleteCoin = (e: { stopPropagation: () => void }) => {
     e.stopPropagation();
     if (count > 0) {
+      if (props.item.count <= count) {
+        dispatch(
+          currentBriefcaseSlice.actions.deleteBriefcaseCurrent({
+            priceUsd: 0,
+            id: props.item.id,
+          }),
+        );
+      }
       const deleteItem: coinBriefcaseInterface = {
         id: props.item.id,
         count: props.item.count - count,
@@ -37,13 +61,16 @@ function CoinItem(props: { item: coinBriefcaseInterface }) {
     >
       <div className="flex w-[100%] flex-row justify-between">
         <div className="flex flex-row text-[14px] text-white">
-          {props.item.symbol}
-          <pre className="text-[14px] text-dark-theme-text">
-            {" "}
-            x{props.item.count}
-          </pre>
+          <Text variant={"dark"} size={"normal"}>
+            {props.item.symbol}
+          </Text>
+          <Text variant={"dark"} size={"normal"}>
+            <pre>x{formatValue(Number(props.item.count))}</pre>
+          </Text>
         </div>
-        <div className="text-[14px] text-white">$ {Number(props.item.priceUsd).toFixed(2)}</div>
+        <Text variant={"normal"} size={"normal"}>
+          $ {formatValue(Number(props.item.priceUsd))}
+        </Text>
       </div>
 
       <div className="m-2 flex w-[100%] flex-row items-center justify-start gap-3 lg:m-0 lg:justify-end">
