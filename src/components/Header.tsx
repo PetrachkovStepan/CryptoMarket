@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Interactive/Button";
 import PopularList from "./Lists/PopularList/PopularList";
 import Modal from "./Interactive/Modal";
@@ -6,11 +6,29 @@ import Serachbar from "./Serachbar";
 import BriefcaseContent from "./Briefcase";
 import { cryptoAPI } from "../api/coinAPI";
 import LoaderError from "./LoaderError";
+import { useAppSelector } from "../hooks/redux";
+import { calculateBriefcaseValueChange } from "../utils/briefcasePricesCalc/briefcasePricesCalc";
+import { formatValue } from "../utils/postPerformActions/textFormater";
+import Text from "./Text";
 
 function Header() {
   const [modalActive, setModalActive] = useState(false);
   const { data: coinList, error } = cryptoAPI.useFetchAllCoinsQuery("");
 
+  const briefcase = useAppSelector((state) => state.briefcase);
+  const currentBriefcase = useAppSelector((state) => state.currentBriefcase);
+  const [briefcaseValue, setBriefcaseValue] = useState<{
+    value: number;
+    valueChange: number;
+    percent: number;
+  }>({ value: 0, valueChange: 0, percent: 0 });
+  useEffect(() => {
+    if (briefcase.items.length == currentBriefcase.items.length) {
+      setBriefcaseValue(
+        calculateBriefcaseValueChange(briefcase.items, currentBriefcase.items),
+      );
+    }
+  }, [briefcase.items, currentBriefcase.items]);
   return (
     <header className="flex min-h-[70px] flex-col items-center justify-between border-b-[2px] border-dark-theme-ligth-blue px-5 lg:flex-row">
       {error && <LoaderError item="Ooops, something is wrong!" />}
@@ -22,12 +40,17 @@ function Header() {
           size={"sm"}
           onClick={() => setModalActive(true)}
         >
-          <pre className="text-[14px] text-dark-theme-text">
-            {"134,32"} USD{" "}
-          </pre>
-          <pre className="text-[14px] text-green-text">
-            {"+2,38"} {"(1,80 %)"}
-          </pre>
+          <Text variant={"normal"} size={"normal"}>
+            <pre>{formatValue(Number(briefcaseValue.value))} USD </pre>
+          </Text>
+          <Text
+            variant={briefcaseValue.valueChange > 0 ? "priceUp" : "priceDown"}
+            size={"middle"}
+          >
+            {briefcaseValue.valueChange > 0 ? "+" : "-"} {formatValue(Number(briefcaseValue.valueChange))} {"("}
+            {formatValue(Number(briefcaseValue.percent))}%
+            {")"}
+          </Text>
         </Button>
       </div>
       <Modal
@@ -36,7 +59,7 @@ function Header() {
         variant={"briefcase"}
         size={"neutral"}
       >
-        <BriefcaseContent />
+        <BriefcaseContent item={briefcaseValue}/>
       </Modal>
     </header>
   );

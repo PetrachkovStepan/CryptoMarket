@@ -7,6 +7,7 @@ import AddModal from "../../AddModal";
 import { coinInterface } from "../../../utils/types/coinType";
 import TableCurrency from "./TableCurrency";
 import { formatValue } from "../../../utils/postPerformActions/textFormater";
+import Text from "../../Text";
 
 function TableItem(props: { item: coinInterface }) {
   const [modalActive, setModalActive] = useState(false);
@@ -25,8 +26,10 @@ function TableItem(props: { item: coinInterface }) {
       className="h-[60px] border-t-[1px] border-dark-theme-ligth-blue px-[3%] hover:bg-dark-theme-middle-blue lg:px-[10%]"
       onClick={navigateToCoinpage}
     >
-      <td className="flex h-[60px] w-[100%] items-center justify-center text-[14px] text-white">
-        {props.item.symbol}
+      <td className="flex h-[60px] w-[100%] items-center justify-center">
+        <Text variant={"normal"} size={"normal"}>
+          {props.item.symbol}
+        </Text>
       </td>
       <td>
         <TableCurrency>
@@ -42,18 +45,27 @@ function TableItem(props: { item: coinInterface }) {
       </td>
       <td className="text-[14px] text-white">
         <TableCurrency>
-          <div>{formatValue(Number(props.item.priceUsd))}</div>
+          <Text variant={"normal"} size={"normal"}>
+            {formatValue(Number(props.item.priceUsd))}
+          </Text>
         </TableCurrency>
       </td>
-      <td className="text-[14px] text-white">
+      <td>
         <TableCurrency>
-          {formatValue(Number(props.item.marketCapUsd))}
+          <Text variant={"normal"} size={"normal"}>
+            {formatValue(Number(props.item.marketCapUsd))}
+          </Text>
         </TableCurrency>
       </td>
-
-      <td className="text-[14px] text-green-text">
+      <td>
         <TableCurrency>
-          {formatValue(Number(props.item.changePercent24Hr))} %
+          <Text
+            variant={props.item.changePercent24Hr > 0 ? "priceUp" : "priceDown"}
+            size={"normal"}
+          >
+            {props.item.changePercent24Hr > 0 ? "+" : "-"}
+            {formatValue(Number(props.item.changePercent24Hr))} %
+          </Text>
         </TableCurrency>
       </td>
       <td>

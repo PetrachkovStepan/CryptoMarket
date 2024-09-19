@@ -1,4 +1,5 @@
 import { coinInterface } from "../../../utils/types/coinType";
+import Text from "../../Text";
 import TableItem from "./TableItem";
 
 function TableList({ items }: { items: coinInterface[] }) {
@@ -6,12 +7,13 @@ function TableList({ items }: { items: coinInterface[] }) {
     <table className="w-[80%] table-auto">
       <thead>
         <tr className="gap-2">
-          <th className="text-[14px] text-white">Name</th>
-          <th className="text-[14px] text-white">Img</th>
-          <th className="text-[14px] text-white">$ Prise</th>
-          <th className="text-[14px] text-white">$ Market cap.</th>
-          <th className="text-[14px] text-white">24hr change</th>
-          <th className="text-[14px] text-white">Add to case</th>
+          
+          <th className="text-[14px] text-white"><Text variant={"normal"} size={"normal"}>Name</Text></th>
+          <th className="text-[14px] text-white"><Text variant={"normal"} size={"normal"}>Img</Text></th>
+          <th className="text-[14px] text-white"><Text variant={"normal"} size={"normal"}>$ Prise</Text></th>
+          <th className="text-[14px] text-white"><Text variant={"normal"} size={"normal"}>$ Market cap.</Text></th>
+          <th className="text-[14px] text-white"><Text variant={"normal"} size={"normal"}>24hr change</Text></th>
+          <th className="text-[14px] text-white"><Text variant={"normal"} size={"normal"}>Add to case</Text></th>
         </tr>
       </thead>
       <tbody>

@@ -1,5 +1,6 @@
-import { TABLE_VALUE_RANGE } from "../../../constants/intervalsAPI";
+import { formatValue } from "../../../utils/postPerformActions/textFormater";
 import { coinInterface } from "../../../utils/types/coinType";
+import Text from "../../Text";
 
 function PopularLItem(props: { item: coinInterface }) {
   return (
@@ -7,9 +8,9 @@ function PopularLItem(props: { item: coinInterface }) {
       <pre className="text-[14px] text-dark-theme-text">
         {props.item.symbol.toUpperCase()}:
       </pre>
-      <pre className="text-[14px] text-blue-600">
-        {Number(props.item.priceUsd).toFixed(TABLE_VALUE_RANGE)} %
-      </pre>
+      <Text variant={"blue"} size={"normal"}>
+        <pre>{formatValue(Number(props.item.priceUsd))} %</pre>
+      </Text>
     </div>
   );
 }
