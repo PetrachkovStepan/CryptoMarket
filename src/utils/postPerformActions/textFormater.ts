@@ -24,5 +24,20 @@ export const formatValue = (item: number) => {
       (Number(item) / THOUSAND).toFixed(TABLE_VALUE_RANGE).toString() + "k";
     return text;
   }
+  if (item <= 1 / BILLION) {
+    text +=
+      (Number(item) * BILLION).toFixed(TABLE_VALUE_RANGE).toString() + "e-9";
+    return text;
+  }
+  if (item <= 1 / MILLION) {
+    text +=
+      (Number(item) * THOUSAND).toFixed(TABLE_VALUE_RANGE).toString() + "e-6";
+    return text;
+  }
+  if (item <= 1 / THOUSAND) {
+    text +=
+      (Number(item) * THOUSAND).toFixed(TABLE_VALUE_RANGE).toString() + "e-3";
+    return text;
+  }
   return item.toFixed(TABLE_VALUE_RANGE).toString();
 };
