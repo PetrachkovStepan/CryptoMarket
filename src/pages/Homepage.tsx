@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { cryptoAPI } from "api/coinAPI";
 import Pagination from "components/Pagination";
-import Select from "components/Interactive/Select";
+import Select from "components/InteractiveReused/Select";
 import TableList from "components/Lists/TableList/TableList";
 import { sortCoinList } from "utils/postPerformActions/sortFunctions";
 import {
@@ -14,6 +14,7 @@ import {
 import LoaderError from "../components/LoaderError";
 
 function Homepage() {
+  const [offset, setOffset] = useState<number>(0);
   const [sortParam, setSortParam] = useState<
     "rank" | "priceUsd" | "changePercent24Hr" | "marketCapUsd"
   >(RANK);
@@ -21,7 +22,7 @@ function Homepage() {
     data: coinList,
     error,
     isLoading,
-  } = cryptoAPI.useFetchAllCoinsQuery("");
+  } = cryptoAPI.useFetchAllCoinsQuery(offset);
 
   return (
     <div className="flex w-[100%] flex-col items-center justify-center">
@@ -67,9 +68,9 @@ function Homepage() {
       {isLoading && <LoaderError item="Loading..." />}
       {error && <LoaderError item="Ooops, something is wrong!" />}
       {coinList && (
-        <TableList items={sortCoinList(coinList?.data, sortParam)} />
+        <TableList items={sortCoinList(coinList?.data, sortParam)} offset={offset}/>
       )}
-      <Pagination />
+      <Pagination setInterval={setOffset} interval={offset}/>
     </div>
   );
 }

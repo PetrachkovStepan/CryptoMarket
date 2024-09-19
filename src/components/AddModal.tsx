@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useAppDispatch } from "hooks/redux";
 import { briefcaseSlice } from "store/reducers/briefcaseReducer";
 import { coinBriefcaseInterface, coinInterface } from "utils/types/coinType";
-import Button from "components/Interactive/Button";
-import Input from "components/Interactive/Input";
+import Button from "components/InteractiveReused/Button";
+import Input from "components/InteractiveReused/Input";
 import { formatValue } from "utils/postPerformActions/textFormater";
 import Text from "components/Text";
 

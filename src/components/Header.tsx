@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Button from "components/Interactive/Button";
+import Button from "components/InteractiveReused/Button";
 import PopularList from "components/Lists/PopularList/PopularList";
-import Modal from "components/Interactive/Modal";
+import Modal from "components/InteractiveReused/Modal";
 import Serachbar from "components/Serachbar";
 import BriefcaseContent from "components/Briefcase";
 import { cryptoAPI } from "api/coinAPI";
@@ -13,7 +13,7 @@ import Text from "components/Text";
 
 function Header() {
   const [modalActive, setModalActive] = useState(false);
-  const { data: coinList, error } = cryptoAPI.useFetchAllCoinsQuery("");
+  const { data: coinList, error } = cryptoAPI.useFetchAllCoinsQuery(0);
 
   const briefcase = useAppSelector((state) => state.briefcase);
   const currentBriefcase = useAppSelector((state) => state.currentBriefcase);
@@ -47,9 +47,9 @@ function Header() {
             variant={briefcaseValue.valueChange > 0 ? "priceUp" : "priceDown"}
             size={"middle"}
           >
-            {briefcaseValue.valueChange > 0 ? "+" : "-"} {formatValue(Number(briefcaseValue.valueChange))} {"("}
-            {formatValue(Number(briefcaseValue.percent))}%
-            {")"}
+            {briefcaseValue.valueChange > 0 ? "+" : "-"}{" "}
+            {formatValue(Number(briefcaseValue.valueChange))} {"("}
+            {formatValue(Number(briefcaseValue.percent))}%{")"}
           </Text>
         </Button>
       </div>
@@ -59,7 +59,7 @@ function Header() {
         variant={"briefcase"}
         size={"neutral"}
       >
-        <BriefcaseContent item={briefcaseValue}/>
+        <BriefcaseContent item={briefcaseValue} />
       </Modal>
     </header>
   );
