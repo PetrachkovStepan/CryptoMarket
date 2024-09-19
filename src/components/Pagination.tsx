@@ -9,7 +9,7 @@ function Pagination({ setInterval, interval }: PaginationProps) {
   return (
     <div className="my-10 flex flex-row gap-4">
       <Button
-        variant={"blueButton"}
+        variant={interval > 0 ? "blueButton" : "primary"}
         size={"md"}
         onClick={() => {
           if (interval == 0) {
