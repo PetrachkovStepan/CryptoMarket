@@ -5,8 +5,8 @@ import { useState } from "react";
 import Modal from "../../Interactive/Modal";
 import AddModal from "../../AddModal";
 import { coinInterface } from "../../../utils/types/coinType";
-import { TABLE_VALUE_RANGE } from "../../../constants/intervalsAPI";
 import TableCurrency from "./TableCurrency";
+import { formatValue } from "../../../utils/postPerformActions/textFormater";
 
 function TableItem(props: { item: coinInterface }) {
   const [modalActive, setModalActive] = useState(false);
@@ -42,18 +42,18 @@ function TableItem(props: { item: coinInterface }) {
       </td>
       <td className="text-[14px] text-white">
         <TableCurrency>
-          <div>{Number(props.item.priceUsd).toFixed(TABLE_VALUE_RANGE)}</div>
+          <div>{formatValue(Number(props.item.priceUsd))}</div>
         </TableCurrency>
       </td>
       <td className="text-[14px] text-white">
         <TableCurrency>
-          {Number(props.item.marketCapUsd).toFixed(TABLE_VALUE_RANGE)}
+          {formatValue(Number(props.item.marketCapUsd))}
         </TableCurrency>
       </td>
 
-      <td className="text-[14px] text-white">
+      <td className="text-[14px] text-green-text">
         <TableCurrency>
-          {Number(props.item.changePercent24Hr).toFixed(TABLE_VALUE_RANGE)} %
+          {formatValue(Number(props.item.changePercent24Hr))} %
         </TableCurrency>
       </td>
       <td>
@@ -67,7 +67,7 @@ function TableItem(props: { item: coinInterface }) {
             variant={"add"}
             size={"neutral"}
           >
-            <AddModal />
+            <AddModal item={props.item} />
           </Modal>
         </TableCurrency>
       </td>
