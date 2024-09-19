@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   briefcaseAction,
   briefcaseState,
-} from "../../utils/types/redusersTypes/briefcareTypes";
+} from "utils/types/redusersTypes/briefcareTypes";
 
 const initialState: briefcaseState = {
   items: [],

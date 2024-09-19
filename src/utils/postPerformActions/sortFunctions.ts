@@ -1,5 +1,5 @@
-import { RANK } from "../../constants/sortConst";
-import { coinInterface } from "../types/coinType";
+import { RANK } from "constants/sortConst";
+import { coinInterface } from "utils/types/coinType";
 
 export const sortCoinList = (
   list: coinInterface[] | undefined,

@@ -1,13 +1,15 @@
+import { useState } from "react";
+
 import { useNavigate } from "react-router";
 
-import Button from "../../Interactive/Button";
-import { useState } from "react";
-import Modal from "../../Interactive/Modal";
-import AddModal from "../../AddModal";
-import { coinInterface } from "../../../utils/types/coinType";
+import Text from "components/Text";
+import AddModal from "components/AddModal";
+import Modal from "components/Interactive/Modal";
+import Button from "components/Interactive/Button";
+import { coinInterface } from "utils/types/coinType";
+import { formatValue } from "utils/postPerformActions/textFormater";
+
 import TableCurrency from "./TableCurrency";
-import { formatValue } from "../../../utils/postPerformActions/textFormater";
-import Text from "../../Text";
 
 function TableItem(props: { item: coinInterface }) {
   const [modalActive, setModalActive] = useState(false);

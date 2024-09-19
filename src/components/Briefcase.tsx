@@ -1,9 +1,10 @@
-import CoinList from "./Lists/CoinList/CoinList";
-import { useAppSelector } from "../hooks/redux";
-import Text from "./Text";
-import { formatValue } from "../utils/postPerformActions/textFormater";
 import { useEffect } from "react";
-import { calculateBriefcaseValueChange } from "../utils/briefcasePricesCalc/briefcasePricesCalc";
+
+import Text from "components/Text";
+import { useAppSelector } from "hooks/redux";
+import CoinList from "components/Lists/CoinList/CoinList";
+import { formatValue } from "utils/postPerformActions/textFormater";
+import { calculateBriefcaseValueChange } from "utils/briefcasePricesCalc/briefcasePricesCalc";
 
 function BriefcaseContent(props: {
   item: { value: number; valueChange: number; percent: number };

@@ -1,6 +1,8 @@
+import { ReactNode, SelectHTMLAttributes } from "react";
+
 import { cva, VariantProps } from "class-variance-authority";
-import { SelectHTMLAttributes, ReactNode } from "react";
-import cn from "../../utils/cn";
+
+import cn from "utils/cn";
 
 interface SelectProps
   extends SelectHTMLAttributes<HTMLSelectElement>,

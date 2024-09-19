@@ -1,4 +1,4 @@
-import { coinBriefcaseInterface } from "../types/coinType";
+import { coinBriefcaseInterface } from "utils/types/coinType";
 
 export const calculateBriefcaseValueChange = (
   list: coinBriefcaseInterface[],

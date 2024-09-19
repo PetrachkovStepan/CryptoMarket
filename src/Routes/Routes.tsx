@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "../App";
-import Homepage from "../pages/Homepage";
-import Coinpage from "../pages/Coinpage";
-import Page404 from "../pages/404Page";
+import Homepage from "pages/Homepage";
+import Coinpage from "pages/Coinpage";
+import Page404 from "pages/404Page";
 
 export const router = createBrowserRouter([
   {

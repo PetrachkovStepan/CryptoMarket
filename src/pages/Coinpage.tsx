@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router";
 
-import Chart from "../components/Chart";
-import Button from "../components/Interactive/Button";
-import CoinInfo from "../components/CoinInfo";
+import Chart from "components/Chart";
+import Button from "components/Interactive/Button";
+import CoinInfo from "components/CoinInfo";
 
 function Coinpage() {
   const navigate = useNavigate();

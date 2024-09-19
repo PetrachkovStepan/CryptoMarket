@@ -1,4 +1,4 @@
-import Button from "./Interactive/Button";
+import Button from "components/Interactive/Button";
 
 function Pagination() {
   return (

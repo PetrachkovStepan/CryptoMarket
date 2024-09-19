@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useAppDispatch } from "../hooks/redux";
-import { briefcaseSlice } from "../store/reducers/briefcaseReducer";
-import { coinBriefcaseInterface, coinInterface } from "../utils/types/coinType";
-import Button from "./Interactive/Button";
-import Input from "./Interactive/Input";
-import { formatValue } from "../utils/postPerformActions/textFormater";
-import Text from "./Text";
+import { useAppDispatch } from "hooks/redux";
+import { briefcaseSlice } from "store/reducers/briefcaseReducer";
+import { coinBriefcaseInterface, coinInterface } from "utils/types/coinType";
+import Button from "components/Interactive/Button";
+import Input from "components/Interactive/Input";
+import { formatValue } from "utils/postPerformActions/textFormater";
+import Text from "components/Text";
 
 function AddModal(props: { item: coinInterface }) {
   const dispatch = useAppDispatch();

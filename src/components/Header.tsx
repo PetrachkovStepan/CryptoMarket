@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import Button from "./Interactive/Button";
-import PopularList from "./Lists/PopularList/PopularList";
-import Modal from "./Interactive/Modal";
-import Serachbar from "./Serachbar";
-import BriefcaseContent from "./Briefcase";
-import { cryptoAPI } from "../api/coinAPI";
-import LoaderError from "./LoaderError";
-import { useAppSelector } from "../hooks/redux";
-import { calculateBriefcaseValueChange } from "../utils/briefcasePricesCalc/briefcasePricesCalc";
-import { formatValue } from "../utils/postPerformActions/textFormater";
-import Text from "./Text";
+import Button from "components/Interactive/Button";
+import PopularList from "components/Lists/PopularList/PopularList";
+import Modal from "components/Interactive/Modal";
+import Serachbar from "components/Serachbar";
+import BriefcaseContent from "components/Briefcase";
+import { cryptoAPI } from "api/coinAPI";
+import LoaderError from "components/LoaderError";
+import { useAppSelector } from "hooks/redux";
+import { calculateBriefcaseValueChange } from "utils/briefcasePricesCalc/briefcasePricesCalc";
+import { formatValue } from "utils/postPerformActions/textFormater";
+import Text from "components/Text";
 
 function Header() {
   const [modalActive, setModalActive] = useState(false);

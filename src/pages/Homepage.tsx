@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { cryptoAPI } from "../api/coinAPI";
-import Pagination from "../components/Pagination";
-import Select from "../components/Interactive/Select";
-import TableList from "../components/Lists/TableList/TableList";
-import { sortCoinList } from "../utils/postPerformActions/sortFunctions";
+import { cryptoAPI } from "api/coinAPI";
+import Pagination from "components/Pagination";
+import Select from "components/Interactive/Select";
+import TableList from "components/Lists/TableList/TableList";
+import { sortCoinList } from "utils/postPerformActions/sortFunctions";
 import {
   CHANGE_PERCENT_24HR,
   MARKET_CAP_USD,

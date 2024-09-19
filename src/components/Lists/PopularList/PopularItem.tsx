@@ -1,6 +1,6 @@
-import { formatValue } from "../../../utils/postPerformActions/textFormater";
-import { coinInterface } from "../../../utils/types/coinType";
-import Text from "../../Text";
+import Text from "components/Text";
+import { coinInterface } from "utils/types/coinType";
+import { formatValue } from "utils/postPerformActions/textFormater";
 
 function PopularLItem(props: { item: coinInterface }) {
   return (
