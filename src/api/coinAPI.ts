@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import { coinHistoryListInterface } from "../utils/types/historyType";
-import { coinInterface, coinListInterface } from "../utils/types/coinType";
+import { coinHistoryListInterface } from "utils/types/historyType";
+import { coinInterface, coinListInterface } from "utils/types/coinType";
 
 const URL = "https://api.coincap.io/v2/assets";
 export const cryptoAPI = createApi({

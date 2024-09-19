@@ -1,6 +1,8 @@
-import { cva, VariantProps } from "class-variance-authority";
 import { InputHTMLAttributes } from "react";
-import cn from "../../utils/cn";
+
+import { cva, VariantProps } from "class-variance-authority";
+
+import cn from "utils/cn";
 
 interface InputProps
   extends InputHTMLAttributes<HTMLInputElement>,
@@ -28,7 +30,8 @@ const inputVariants = cva(
       variant: {
         primary:
           "border-dark-theme-ligth-blue bg-dark-theme-middle-blue p-3 text-white hover:bg-dark-theme-ligth-blue",
-        secondary: "w-[40%] border-dark-theme-ligth-blue bg-dark-theme-middle-blue p-3 text-white hover:bg-dark-theme-ligth-blue",
+        secondary:
+          "w-[40%] border-dark-theme-ligth-blue bg-dark-theme-middle-blue p-3 text-white hover:bg-dark-theme-ligth-blue",
       },
     },
     defaultVariants: {

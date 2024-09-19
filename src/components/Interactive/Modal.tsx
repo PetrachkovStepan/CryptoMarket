@@ -1,6 +1,8 @@
-import { cva, VariantProps } from "class-variance-authority";
 import { Dispatch, HTMLAttributes, ReactNode, SetStateAction } from "react";
-import cn from "../../utils/cn";
+
+import { cva, VariantProps } from "class-variance-authority";
+
+import cn from "utils/cn";
 
 interface ModalProps
   extends HTMLAttributes<HTMLDivElement>,
@@ -27,7 +29,7 @@ export default function Modal({
     <div
       className={
         active
-          ? "fixed left-0 top-0 flex h-[100vh] w-[100vw] flex-col items-center justify-center bg-black bg-opacity-[40%] z-50"
+          ? "fixed left-0 top-0 z-50 flex h-[100vh] w-[100vw] flex-col items-center justify-center bg-black bg-opacity-[40%]"
           : "hidden"
       }
       onClick={(e) => closeModal(e)}

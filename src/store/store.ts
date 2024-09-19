@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { cryptoAPI } from "../api/coinAPI";
-import briefcaseReducer from "./reducers/briefcaseReducer";
+import { cryptoAPI } from "api/coinAPI";
+import briefcaseReducer from "store/reducers/briefcaseReducer";
 import {
   persistStore,
   persistReducer,

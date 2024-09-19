@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router";
 
-import Input from "../../Interactive/Input";
-import Button from "../../Interactive/Button";
-import { cryptoAPI } from "../../../api/coinAPI";
-import { useAppDispatch } from "../../../hooks/redux";
-import { coinBriefcaseInterface } from "../../../utils/types/coinType";
-import { briefcaseSlice } from "../../../store/reducers/briefcaseReducer";
-import { currentBriefcaseSlice } from "../../../store/reducers/currentBriefcaseReducer";
-import Text from "../../Text";
-import { formatValue } from "../../../utils/postPerformActions/textFormater";
+import Text from "components/Text";
+import { cryptoAPI } from "api/coinAPI";
+import { useAppDispatch } from "hooks/redux";
+import Input from "components/Interactive/Input";
+import Button from "components/Interactive/Button";
+import { coinBriefcaseInterface } from "utils/types/coinType";
+import { briefcaseSlice } from "store/reducers/briefcaseReducer";
+import { formatValue } from "utils/postPerformActions/textFormater";
+import { currentBriefcaseSlice } from "store/reducers/currentBriefcaseReducer";
 
 function CoinItem(props: { item: coinBriefcaseInterface }) {
   const navigate = useNavigate();

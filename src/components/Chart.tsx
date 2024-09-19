@@ -3,8 +3,8 @@ import { useState } from "react";
 import Chart from "react-apexcharts";
 import { useParams } from "react-router";
 
-import Select from "./Interactive/Select";
-import { cryptoAPI } from "../api/coinAPI";
+import Select from "components/Interactive/Select";
+import { cryptoAPI } from "api/coinAPI";
 import { coinHistoryDateInterface, coinHistoryPriceInterface } from "../utils/types/historyType";
 import { CHART_VALUE_RANGE, DAY, DAY_SIZE, HOUR_1, HOUR_1_SIZE, HOUR_12, HOUR_12_SIZE } from "../constants/intervalsAPI";
 

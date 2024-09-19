@@ -1,4 +1,4 @@
-import { TABLE_VALUE_RANGE } from "../../constants/intervalsAPI";
+import { TABLE_VALUE_RANGE } from "constants/intervalsAPI";
 
 const BILLION = 1000000000;
 const MILLION = 1000000;

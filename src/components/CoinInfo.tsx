@@ -2,13 +2,13 @@ import { useState } from "react";
 
 import { useParams } from "react-router";
 
-import Modal from "./Interactive/Modal";
-import Button from "./Interactive/Button";
-import AddModal from "./AddModal";
-import CoinInfoTag from "./CoinInfoTag";
-import { cryptoAPI } from "../api/coinAPI";
-import LoaderError from "./LoaderError";
-import { formatValue } from "../utils/postPerformActions/textFormater";
+import Modal from "components/Interactive/Modal";
+import Button from "components/Interactive/Button";
+import AddModal from "components/AddModal";
+import CoinInfoTag from "components/CoinInfoTag";
+import { cryptoAPI } from "api/coinAPI";
+import LoaderError from "components/LoaderError";
+import { formatValue } from "utils/postPerformActions/textFormater";
 
 function CoinInfo() {
   const coinId = useParams();
