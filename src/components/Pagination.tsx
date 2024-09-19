@@ -1,9 +1,23 @@
-import Button from "components/Interactive/Button";
+import Button from "components/InteractiveReused/Button";
+import { Dispatch, HTMLAttributes, SetStateAction } from "react";
 
-function Pagination() {
+interface PaginationProps extends HTMLAttributes<HTMLDivElement> {
+  setInterval: Dispatch<SetStateAction<number>>;
+  interval: number;
+}
+function Pagination({ setInterval, interval }: PaginationProps) {
   return (
     <div className="my-10 flex flex-row gap-4">
-      <Button variant={"blueButton"} size={"md"}>
+      <Button
+        variant={"blueButton"}
+        size={"md"}
+        onClick={() => {
+          if (interval == 0) {
+            return;
+          }
+          setInterval((a) => a - 100);
+        }}
+      >
         <svg
           className="me-2 h-3.5 w-3.5 rtl:rotate-180"
           aria-hidden="true"
@@ -21,7 +35,13 @@ function Pagination() {
         </svg>
         Prev
       </Button>
-      <Button variant={"blueButton"} size={"md"}>
+      <Button
+        variant={"blueButton"}
+        size={"md"}
+        onClick={() => {
+          setInterval((a) => a + 100);
+        }}
+      >
         Next
         <svg
           className="ms-2 h-3.5 w-3.5 rtl:rotate-180"

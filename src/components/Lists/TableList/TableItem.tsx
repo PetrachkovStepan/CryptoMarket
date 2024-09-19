@@ -4,8 +4,8 @@ import { useNavigate } from "react-router";
 
 import Text from "components/Text";
 import AddModal from "components/AddModal";
-import Modal from "components/Interactive/Modal";
-import Button from "components/Interactive/Button";
+import Modal from "components/InteractiveReused/Modal";
+import Button from "components/InteractiveReused/Button";
 import { coinInterface } from "utils/types/coinType";
 import { formatValue } from "utils/postPerformActions/textFormater";
 

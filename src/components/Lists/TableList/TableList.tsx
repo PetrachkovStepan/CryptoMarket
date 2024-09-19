@@ -3,7 +3,7 @@ import { coinInterface } from "utils/types/coinType";
 
 import TableItem from "./TableItem";
 
-function TableList({ items }: { items: coinInterface[] }) {
+function TableList({ items }: { items: coinInterface[] , offset:number}) {
   return (
     <table className="w-[80%] table-auto">
       <thead>

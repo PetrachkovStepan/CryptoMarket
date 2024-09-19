@@ -8,10 +8,12 @@ export const cryptoAPI = createApi({
   reducerPath: "cryptoApi",
   baseQuery: fetchBaseQuery({ baseUrl: URL }),
   endpoints: (build) => ({
-    fetchAllCoins: build.query<coinListInterface, string>({
-      query: () => ({
+    fetchAllCoins: build.query<coinListInterface, number>({
+      query: (offset) => ({
         url: "",
-        params: {},
+        params: {
+          offset: offset,
+        },
       }),
     }),
     fetchSingleCoin: build.query<{ data: coinInterface }, string | undefined>({

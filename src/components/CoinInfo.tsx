@@ -2,8 +2,8 @@ import { useState } from "react";
 
 import { useParams } from "react-router";
 
-import Modal from "components/Interactive/Modal";
-import Button from "components/Interactive/Button";
+import Modal from "components/InteractiveReused/Modal";
+import Button from "components/InteractiveReused/Button";
 import AddModal from "components/AddModal";
 import CoinInfoTag from "components/CoinInfoTag";
 import { cryptoAPI } from "api/coinAPI";
