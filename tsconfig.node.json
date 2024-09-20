@@ -4,6 +4,7 @@
     "lib": ["ES2023"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": ["cypress"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -30,5 +31,5 @@
       "utils/*": ["utils/*"]
     }
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "**/*.ts", "cypress/e2e/modal_e2e.cy.js"]
 }

@@ -9,10 +9,12 @@ function Serachbar() {
   const navigate = useNavigate();
   const navigateToCoinpage = () => {
     navigate("coin/" + id.toLowerCase());
+    setId("");
   };
   return (
     <div className="m-x-2 relative flex h-[35px] flex-row-reverse items-center bg-dark-theme-middle-blue">
       <Button
+        id={"searchButton"}
         variant={"searchButton"}
         size={"neutral"}
         onClick={navigateToCoinpage}
@@ -20,9 +22,13 @@ function Serachbar() {
         <SearchImg />
       </Button>
       <Input
+        value={id}
         variant={"primary"}
         placeholder="Search"
-        onChange={(e) => {setId(e.target.value)}}
+        type="text"
+        onChange={(e) => {
+          setId(e.target.value);
+        }}
       />
     </div>
   );

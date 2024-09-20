@@ -15,7 +15,7 @@ import { currentBriefcaseSlice } from "store/reducers/currentBriefcaseReducer";
 function CoinItem(props: { item: coinBriefcaseInterface }) {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState<string>('');
   const navigateToCoinpage = () => {
     navigate("coin/" + props.item.id.toString());
   };
@@ -33,8 +33,8 @@ function CoinItem(props: { item: coinBriefcaseInterface }) {
 
   const deleteCoin = (e: { stopPropagation: () => void }) => {
     e.stopPropagation();
-    if (count > 0) {
-      if (props.item.count <= count) {
+    if (Number(count) > 0) {
+      if (props.item.count <= Number(count)) {
         dispatch(
           currentBriefcaseSlice.actions.deleteBriefcaseCurrent({
             priceUsd: 0,
@@ -44,14 +44,14 @@ function CoinItem(props: { item: coinBriefcaseInterface }) {
       }
       const deleteItem: coinBriefcaseInterface = {
         id: props.item.id,
-        count: props.item.count - count,
+        count: props.item.count - Number(count),
         symbol: props.item.symbol,
         name: props.item.name,
         priceUsd: props.item.priceUsd,
         changePercent24Hr: props.item.changePercent24Hr,
       };
       dispatch(briefcaseSlice.actions.deleteBriefcaseItem([deleteItem]));
-      console.log("Coin deleted");
+      setCount('')
     }
   };
   return (
@@ -77,8 +77,9 @@ function CoinItem(props: { item: coinBriefcaseInterface }) {
         <Input
           variant={"secondary"}
           placeholder="count"
-          type="number"
-          onChange={(e) => setCount(Number(e.target.value))}
+          value={count}
+          id="deleteInput"
+          onChange={(e) => setCount(e.target.value)}
           onClick={(e) => e.stopPropagation()}
         />
         <Button variant={"primary"} size={"sm"} onClick={deleteCoin}>
