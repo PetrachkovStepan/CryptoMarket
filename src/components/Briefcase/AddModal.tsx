@@ -9,19 +9,20 @@ import Text from "components/InteractiveReused/Text";
 
 function AddModal(props: { item: coinInterface }) {
   const dispatch = useAppDispatch();
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState<string>('');
   const addCoin = (e: { stopPropagation: () => void }) => {
     e.stopPropagation();
-    if (count > 0) {
+    if (Number(count) > 0) {
       const addItem: coinBriefcaseInterface = {
         id: props.item.id,
-        count: count,
+        count: Number(count),
         symbol: props.item.symbol,
         name: props.item.name,
         priceUsd: props.item.priceUsd,
         changePercent24Hr: props.item.changePercent24Hr,
       };
       dispatch(briefcaseSlice.actions.addBriefcaseItem([addItem]));
+      setCount('')
     }
   };
   return (
@@ -45,12 +46,12 @@ function AddModal(props: { item: coinInterface }) {
         <Input
           variant={"secondary"}
           placeholder="count"
-          type="number"
-          onChange={(e) => setCount(Number(e.target.value))}
+          value={count}
+          onChange={(e) => setCount(e.target.value)}
           onClick={(e) => e.stopPropagation()}
         />
         <Button variant={"blueButton"} size={"sm"} onClick={addCoin}>
-          Add
+          Buy
         </Button>
       </div>
     </div>

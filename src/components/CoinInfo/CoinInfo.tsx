@@ -29,7 +29,7 @@ function CoinInfo() {
       {isLoading && <LoaderError item="Loading..." />}
       {error && <LoaderError item="Ooops, something is wrong!" />}
       {coin && (
-        <>
+        <article>
           <div className="flex w-[70%] max-w-[190px] flex-row items-center justify-between">
             <img
               src={
@@ -78,7 +78,7 @@ function CoinInfo() {
               <AddModal item={coin.data} />
             </Modal>
           </div>{" "}
-        </>
+        </article>
       )}
     </section>
   );
