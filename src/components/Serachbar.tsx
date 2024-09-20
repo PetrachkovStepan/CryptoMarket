@@ -22,7 +22,7 @@ function Serachbar() {
       <Input
         variant={"primary"}
         placeholder="Search"
-        onChange={(e) => setId(e.target.value)}
+        onChange={(e) => {setId(e.target.value)}}
       />
     </div>
   );

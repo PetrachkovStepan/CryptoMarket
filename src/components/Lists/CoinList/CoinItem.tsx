@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router";
 
-import Text from "components/Text";
+import Text from "components/InteractiveReused/Text";
 import { cryptoAPI } from "api/coinAPI";
 import { useAppDispatch } from "hooks/redux";
 import Input from "components/InteractiveReused/Input";

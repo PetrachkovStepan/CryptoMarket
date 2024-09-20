@@ -4,8 +4,8 @@ import { useParams } from "react-router";
 
 import Modal from "components/InteractiveReused/Modal";
 import Button from "components/InteractiveReused/Button";
-import AddModal from "components/AddModal";
-import CoinInfoTag from "components/CoinInfoTag";
+import AddModal from "components/Briefcase/AddModal";
+import CoinInfoTag from "components/CoinInfo/CoinInfoTag";
 import { cryptoAPI } from "api/coinAPI";
 import LoaderError from "components/LoaderError";
 import { formatValue } from "utils/postPerformActions/textFormater";
@@ -25,7 +25,7 @@ function CoinInfo() {
   };
 
   return (
-    <div className="m-14 flex w-[80%] flex-col items-start justify-between overflow-hidden rounded-[5px] border-[2px] border-dark-theme-ligth-blue p-5 lg:w-[25%]">
+    <section className="m-14 flex w-[80%] flex-col items-start justify-between overflow-hidden rounded-[5px] border-[2px] border-dark-theme-ligth-blue p-5 lg:w-[25%]">
       {isLoading && <LoaderError item="Loading..." />}
       {error && <LoaderError item="Ooops, something is wrong!" />}
       {coin && (
@@ -80,7 +80,7 @@ function CoinInfo() {
           </div>{" "}
         </>
       )}
-    </div>
+    </section>
   );
 }
 
