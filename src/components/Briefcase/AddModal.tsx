@@ -5,7 +5,7 @@ import { coinBriefcaseInterface, coinInterface } from "utils/types/coinType";
 import Button from "components/InteractiveReused/Button";
 import Input from "components/InteractiveReused/Input";
 import { formatValue } from "utils/postPerformActions/textFormater";
-import Text from "components/Text";
+import Text from "components/InteractiveReused/Text";
 
 function AddModal(props: { item: coinInterface }) {
   const dispatch = useAppDispatch();
@@ -41,7 +41,6 @@ function AddModal(props: { item: coinInterface }) {
           {formatValue(Number(props.item.changePercent24Hr))} %
         </Text>
       </div>
-
       <div className="my-5 flex w-[100%] flex-row items-center justify-start gap-3">
         <Input
           variant={"secondary"}

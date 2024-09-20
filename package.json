@@ -24,6 +24,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "flowbite": "^2.5.1",
+    "laravel-vite-plugin": "^1.0.5",
     "react": "^18.3.1",
     "react-apexcharts": "^1.4.1",
     "react-chartjs-2": "^5.2.0",
@@ -40,6 +41,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
     "@eslint/js": "^9.9.0",
+    "@playwright/test": "^1.47.1",
     "@storybook/addon-essentials": "^8.3.1",
     "@storybook/addon-interactions": "^8.3.1",
     "@storybook/addon-links": "^8.3.1",
@@ -49,6 +51,7 @@
     "@storybook/react-vite": "^8.3.1",
     "@storybook/test": "^8.3.1",
     "@types/chart.js": "^2.9.41",
+    "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
