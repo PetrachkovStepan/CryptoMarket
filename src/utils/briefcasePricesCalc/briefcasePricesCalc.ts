@@ -15,7 +15,7 @@ export const calculateBriefcaseValueChange = (
   return {
     value: nextValue,
     valueChange: prevValue - nextValue,
-    percent: (prevValue - nextValue) / nextValue,
+    percent: ((prevValue - nextValue) / nextValue)*100,
   };
 };
 const sortList = (list: { id: string; priceUsd: number }[]) => {

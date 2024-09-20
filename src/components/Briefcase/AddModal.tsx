@@ -2,14 +2,14 @@ import { useState } from "react";
 import { useAppDispatch } from "hooks/redux";
 import { briefcaseSlice } from "store/reducers/briefcaseReducer";
 import { coinBriefcaseInterface, coinInterface } from "utils/types/coinType";
-import Button from "components/InteractiveReused/Button";
-import Input from "components/InteractiveReused/Input";
+import Button from "components/InteractiveReused/Button/Button";
+import Input from "components/InteractiveReused/Input/Input";
 import { formatValue } from "utils/postPerformActions/textFormater";
-import Text from "components/InteractiveReused/Text";
+import Text from "components/InteractiveReused/Text/Text";
 
 function AddModal(props: { item: coinInterface }) {
   const dispatch = useAppDispatch();
-  const [count, setCount] = useState<string>('');
+  const [count, setCount] = useState<string>("");
   const addCoin = (e: { stopPropagation: () => void }) => {
     e.stopPropagation();
     if (Number(count) > 0) {
@@ -22,7 +22,7 @@ function AddModal(props: { item: coinInterface }) {
         changePercent24Hr: props.item.changePercent24Hr,
       };
       dispatch(briefcaseSlice.actions.addBriefcaseItem([addItem]));
-      setCount('')
+      setCount("");
     }
   };
   return (

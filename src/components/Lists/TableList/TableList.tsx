@@ -1,4 +1,4 @@
-import Text from "components/InteractiveReused/Text";
+import Text from "components/InteractiveReused/Text/Text";
 import { coinInterface } from "utils/types/coinType";
 
 import TableItem from "./TableItem";

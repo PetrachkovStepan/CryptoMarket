@@ -1,5 +1,5 @@
 import { formatValue } from "utils/postPerformActions/textFormater";
-import Text from "../InteractiveReused/Text";
+import Text from "../InteractiveReused/Text/Text";
 
 interface summaryProps {
   value: number;

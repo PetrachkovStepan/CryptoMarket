@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 
 import Chart from "components/Chart";
-import Button from "components/InteractiveReused/Button";
+import Button from "components/InteractiveReused/Button/Button";
 import CoinInfo from "components/CoinInfo/CoinInfo";
 
 function Coinpage() {

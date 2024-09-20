@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import { useNavigate } from "react-router";
 
-import Text from "components/InteractiveReused/Text";
+import Text from "components/InteractiveReused/Text/Text";
 import AddModal from "components/Briefcase/AddModal";
-import Modal from "components/InteractiveReused/Modal";
-import Button from "components/InteractiveReused/Button";
+import Modal from "components/InteractiveReused/Modal/Modal";
+import Button from "components/InteractiveReused/Button/Button";
 import { coinInterface } from "utils/types/coinType";
 import { formatValue } from "utils/postPerformActions/textFormater";
 

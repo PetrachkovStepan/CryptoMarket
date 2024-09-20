@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router";
 
-import Text from "components/InteractiveReused/Text";
+import Text from "components/InteractiveReused/Text/Text";
 import { cryptoAPI } from "api/coinAPI";
 import { useAppDispatch } from "hooks/redux";
-import Input from "components/InteractiveReused/Input";
-import Button from "components/InteractiveReused/Button";
+import Input from "components/InteractiveReused/Input/Input";
+import Button from "components/InteractiveReused/Button/Button";
 import { coinBriefcaseInterface } from "utils/types/coinType";
 import { briefcaseSlice } from "store/reducers/briefcaseReducer";
 import { formatValue } from "utils/postPerformActions/textFormater";
@@ -15,7 +15,7 @@ import { currentBriefcaseSlice } from "store/reducers/currentBriefcaseReducer";
 function CoinItem(props: { item: coinBriefcaseInterface }) {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const [count, setCount] = useState<string>('');
+  const [count, setCount] = useState<string>("");
   const navigateToCoinpage = () => {
     navigate("coin/" + props.item.id.toString());
   };
@@ -51,7 +51,7 @@ function CoinItem(props: { item: coinBriefcaseInterface }) {
         changePercent24Hr: props.item.changePercent24Hr,
       };
       dispatch(briefcaseSlice.actions.deleteBriefcaseItem([deleteItem]));
-      setCount('')
+      setCount("");
     }
   };
   return (

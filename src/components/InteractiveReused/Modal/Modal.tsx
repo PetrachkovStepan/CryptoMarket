@@ -4,7 +4,7 @@ import { cva, VariantProps } from "class-variance-authority";
 
 import cn from "utils/cn";
 
-interface ModalProps
+export interface ModalProps
   extends HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof modalVariants> {
   children: ReactNode;

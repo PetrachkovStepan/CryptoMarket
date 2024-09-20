@@ -2,7 +2,7 @@ import { Dispatch, HTMLAttributes, SetStateAction } from "react";
 
 import ArrowLeft from "assets/ArrowLeft";
 import ArrowRight from "assets/ArrowRight";
-import Button from "components/InteractiveReused/Button";
+import Button from "components/InteractiveReused/Button/Button";
 import { OFFSET_CHANGE } from "constants/paginationConst";
 
 interface PaginationProps extends HTMLAttributes<HTMLDivElement> {

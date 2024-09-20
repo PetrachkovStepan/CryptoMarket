@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { cryptoAPI } from "api/coinAPI";
 import Pagination from "components/Pagination";
-import Select from "components/InteractiveReused/Select";
+import Select from "components/InteractiveReused/Select/Select";
 import TableList from "components/Lists/TableList/TableList";
 import { sortCoinList } from "utils/postPerformActions/sortFunctions";
 import {
@@ -68,9 +68,12 @@ function Homepage() {
       {isLoading && <LoaderError item="Loading..." />}
       {error && <LoaderError item="Ooops, something is wrong!" />}
       {coinList && (
-        <TableList items={sortCoinList(coinList?.data, sortParam)} offset={offset}/>
+        <TableList
+          items={sortCoinList(coinList?.data, sortParam)}
+          offset={offset}
+        />
       )}
-      <Pagination setInterval={setOffset} interval={offset}/>
+      <Pagination setInterval={setOffset} interval={offset} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
 
-import Button from "components/InteractiveReused/Button";
+import Button from "components/InteractiveReused/Button/Button";
 
 function Page404() {
   const navigate = useNavigate();

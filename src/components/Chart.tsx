@@ -4,8 +4,11 @@ import Chart from "react-apexcharts";
 import { useParams } from "react-router";
 
 import { cryptoAPI } from "api/coinAPI";
-import Select from "components/InteractiveReused/Select";
-import { chartGeneration, generateParams } from "utils/chart/chartGenerateOptions";
+import Select from "components/InteractiveReused/Select/Select";
+import {
+  chartGeneration,
+  generateParams,
+} from "utils/chart/chartGenerateOptions";
 
 import { DAY, DAY_SIZE, HOUR_1, HOUR_12 } from "constants/intervalsAPI";
 
