@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import Text from "components/InteractiveReused/Text";
+import Text from "components/InteractiveReused/Text/Text";
 import { useAppSelector } from "hooks/redux";
 import CoinList from "components/Lists/CoinList/CoinList";
 import { formatValue } from "utils/postPerformActions/textFormater";

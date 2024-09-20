@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import SearchImg from "assets/SearchImg";
-import Button from "components/InteractiveReused/Button";
-import Input from "components/InteractiveReused/Input";
+import Button from "components/InteractiveReused/Button/Button";
+import Input from "components/InteractiveReused/Input/Input";
 import { useState } from "react";
 
 function Serachbar() {

@@ -5,8 +5,8 @@ import Serachbar from "components/Serachbar";
 import { useAppSelector } from "hooks/redux";
 import LoaderError from "components/LoaderError";
 import BriefcaseContent from "components/Briefcase/Briefcase";
-import Modal from "components/InteractiveReused/Modal";
-import Button from "components/InteractiveReused/Button";
+import Modal from "components/InteractiveReused/Modal/Modal";
+import Button from "components/InteractiveReused/Button/Button";
 import PopularList from "components/Lists/PopularList/PopularList";
 import { calculateBriefcaseValueChange } from "utils/briefcasePricesCalc/briefcasePricesCalc";
 
