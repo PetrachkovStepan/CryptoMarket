@@ -6,7 +6,7 @@ function CoinList({ items }: { items: coinBriefcaseInterface[] }) {
   return (
     <div className="mt-5 justify-center">
       {items.map((item) => (
-        <CoinItem key={Math.random()} item={item} />
+        <CoinItem key={item.id + "1"} item={item} />
       ))}
     </div>
   );
