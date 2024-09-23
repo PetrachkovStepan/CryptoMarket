@@ -6,16 +6,23 @@ export const calculateBriefcaseValueChange = (
 ) => {
   const prev = sortList(list);
   const curr = sortList(curList);
+  let currentValue = 0;
   let prevValue = 0;
-  let nextValue = 0;
+  let valueChange = 0;
   for (let i = 0; i < prev.length; i++) {
-    nextValue += list[i].count * curr[i].priceUsd;
+    console.log(
+      curr[i].priceUsd + " -- " + prev[i].priceUsd + " count: " + list[i].count,
+    );
+    currentValue += list[i].count * curr[i].priceUsd;
     prevValue += list[i].count * prev[i].priceUsd;
+    valueChange += (curr[i].priceUsd - prev[i].priceUsd)
   }
+  console.log(currentValue + " - " + valueChange + " - " + (valueChange/prevValue) * 100);
+  
   return {
-    value: nextValue,
-    valueChange: prevValue - nextValue,
-    percent: ((prevValue - nextValue) / nextValue)*100,
+    value: currentValue,
+    valueChange: valueChange,
+    percent: (valueChange/prevValue) * 100,
   };
 };
 const sortList = (list: { id: string; priceUsd: number }[]) => {
