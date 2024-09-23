@@ -1,4 +1,4 @@
-import Text from "./Text";
+import Text, { TextProps } from "./Text";
 import "../../../index.css";
 
 export default {
@@ -31,6 +31,6 @@ export default {
   },
 };
 
-const Template = (arg: unknown[]) => <Text {...arg}>Text</Text>;
+const Template = (arg: TextProps) => <Text {...arg}>Text</Text>;
 
 export const TextStory = Template.bind({});
