@@ -2,7 +2,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import cn from "utils/cn";
 import { HTMLAttributes, ReactNode } from "react";
 
-interface TextProps
+export interface TextProps
   extends HTMLAttributes<HTMLElement>,
     VariantProps<typeof textVariants> {
   children: ReactNode;

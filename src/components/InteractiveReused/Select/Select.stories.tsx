@@ -1,4 +1,4 @@
-import Select from "./Select";
+import Select, { SelectProps } from "./Select";
 import "../../../index.css";
 
 export default {
@@ -22,6 +22,6 @@ export default {
   },
 };
 
-const Template = (arg: unknown[]) => <Select {...arg}>Select</Select>;
+const Template = (arg: SelectProps) => <Select {...arg}>Select</Select>;
 
 export const SelectStory = Template.bind({});

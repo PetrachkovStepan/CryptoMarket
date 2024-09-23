@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button, { ButtonProps } from "./Button";
 import "../../../index.css";
 
 export default {
@@ -31,6 +31,6 @@ export default {
   },
 };
 
-const Template = (arg: unknown[]) => <Button {...arg}>Add</Button>;
+const Template = (arg: ButtonProps) => <Button {...arg}>Add</Button>;
 
 export const ButtonStory = Template.bind({});

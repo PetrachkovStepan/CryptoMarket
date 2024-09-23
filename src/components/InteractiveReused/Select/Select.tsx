@@ -4,7 +4,7 @@ import { cva, VariantProps } from "class-variance-authority";
 
 import cn from "utils/cn";
 
-interface SelectProps
+export interface SelectProps
   extends SelectHTMLAttributes<HTMLSelectElement>,
     VariantProps<typeof selectVariants> {
   children: ReactNode;
