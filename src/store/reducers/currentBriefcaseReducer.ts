@@ -18,6 +18,11 @@ export const currentBriefcaseSlice = createSlice({
       const index = state.items.find((item) => item.id == action.payload.id);
       if (index == undefined) {
         state.items.push(action.payload);
+      } else {
+        if (index.priceUsd != action.payload.priceUsd) {
+          state.items = state.items.filter((n) => n.id !== action.payload.id);
+          state.items.push(action.payload);
+        }
       }
     },
     deleteBriefcaseCurrent(
